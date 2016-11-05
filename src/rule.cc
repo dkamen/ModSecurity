@@ -73,6 +73,10 @@ Rule::~Rule() {
     if (variables != NULL) {
         delete variables;
     }
+	
+    if (chainedRule != NULL) {
+        delete chainedRule;
+    }
 }
 
 Rule::Rule(std::string marker)
@@ -137,7 +141,7 @@ Rule::Rule(Operator *_op,
     if (op == NULL) {
         m_unconditional = true;
     }
-
+    	    
     delete actions;
 }
 
